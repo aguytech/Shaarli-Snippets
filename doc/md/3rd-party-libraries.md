@@ -17,5 +17,5 @@
 Library | Usage
 ---|---
 [`shaarli/netscape-bookmark-parser`](https://packagist.org/packages/shaarli/netscape-bookmark-parser) | Import bookmarks from Netscape files
-[`erusev/parsedown`](https://packagist.org/packages/erusev/parsedown) | Parse MarkDown syntax for the MarkDown plugin
+[`erusev/parsedown`](https://packagist.org/packages/erusev/parsedown) | Parse MarkDown syntax for the MarkDown plugin[`erusev/parsedown`](https://packagist.org/packages/erusev/parsedown-extra) | An extension of Parsedown that adds support for Markdown Extra
 [`slim/slim`](https://packagist.org/packages/slim/slim) | Handle routes and middleware for the REST API

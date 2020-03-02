@@ -331,7 +331,7 @@ function sanitize_html($description)
  */
 function process_markdown($description, $escape = true, $allowedProtocols = [])
 {
-    $parsedown = new Parsedown();
+    $parsedown = new ParsedownExtra();
 
     $processedDescription = $description;
     $processedDescription = reverse_nl2br($processedDescription);
