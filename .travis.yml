@@ -1,0 +1,52 @@
+sudo: false
+dist: trusty
+
+matrix:
+  include:
+    - language: php
+      php: 7.3
+    - language: php
+      php: 7.2
+    - language: php
+      php: 7.1
+    - language: node_js
+      node_js: 8
+      cache:
+        yarn: true
+        directories:
+          - $HOME/.cache/yarn
+
+      install:
+        - yarn install
+
+      before_script:
+        - PATH=${PATH//:\.\/node_modules\/\.bin/}
+
+      script:
+        - yarn run build # Just to be sure that the build isn't broken
+        - make eslint
+        - make sasslint
+    - language: python
+      python: 3.6
+      cache:
+        directories:
+          - $HOME/.cache/pip
+      install:
+        - pip install mkdocs
+      script:
+        - mkdocs build --clean
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+install:
+  - composer install --prefer-dist
+
+before_script:
+  - PATH=${PATH//:\.\/node_modules\/\.bin/}
+
+script:
+  - make clean
+  - make check_permissions
+  - make all_tests
